@@ -2,9 +2,10 @@ package prices
 
 import (
 	"bufio"
+	"calculator/conversions"
 	"fmt"
 	"os"
-	"strconv"
+	
 )
 
 type TaxIncludePriceJob struct {
@@ -41,23 +42,21 @@ func (job *TaxIncludePriceJob) LoadData() {
 		return
 	}
 
-	prices := make([]float64, len(lines))
+	prices, err := conversions.StringsToFloat(lines)
 
-	for lineIndex, line := range lines {
-		floatPrice, err := strconv.ParseFloat(line, 64)
 
-		if err!= nil {
-			fmt.Println("Converting to float failed.")
+		if err != nil {
+		
 			fmt.Println(err)
 			file.Close()
 			return
 		}
 
-		prices[lineIndex] = floatPrice
 
 		job.InputPrices = prices
+		file.Close()
 	}
-}
+
 
 func (job *TaxIncludePriceJob) Process() {
 
