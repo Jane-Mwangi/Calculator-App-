@@ -1,1 +1,1 @@
-{"TaxRate":0.07,"InputPrices":[9.99,10.4,15.89,12],"TaxIncludePrices":{"10.400000":"11.128000","12.000000":"12.840000","15.890000":"17.002300","9.990000":"10.689300"}}
+{"IOManager":{"InputFilePath":"prices.txt","OutputFilePath":"result_7.000000.json"},"TaxRate":0.07,"InputPrices":[10,20,30],"TaxIncludePrices":{"10.000000":"10.700000","20.000000":"21.400000","30.000000":"32.100000"}}
